@@ -9,7 +9,7 @@ public class DemoController {
 
     @GetMapping("/demo")
     public String getMsg() {
-        return new RestTemplate().getForEntity("http://user-service:18081/msg", String.class).getBody();
+        return new RestTemplate().getForEntity("http://hello-service:18081/msg", String.class).getBody();
     }
 
 }
