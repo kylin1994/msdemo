@@ -8,7 +8,7 @@ services:
     image: ms-demo/hello
     restart: always
     ports:
-      - "18080:18080"
+      - "18081:18081"
     networks:
       - ms-demo-network
     deploy:
@@ -23,7 +23,7 @@ services:
     image: ms-demo/demo
     restart: always
     ports:
-      - "18081:18081"
+      - "18080:18080"
     networks:
       - ms-demo-network
     deploy:
