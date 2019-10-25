@@ -1,0 +1,35 @@
+  
+version: '3'
+services:
+  hello-service:
+    build:
+      context: ./hello
+      dockerfile: Dockerfile
+    image: ms-demo/hello
+    restart: always
+    ports:
+      - "18080:18080"
+    networks:
+      - ms-demo-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  demo-service:
+    build:
+      context: ./demo
+      dockerfile: Dockerfile
+    image: ms-demo/demo
+    restart: always
+    ports:
+      - "18081:18081"
+    networks:
+      - ms-demo-network
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  ms-demo-network:
